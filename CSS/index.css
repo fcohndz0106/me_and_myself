@@ -1,0 +1,80 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  .main-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .nav-link {
+    margin-right: 10px;
+  }
+  
+  .nav-link a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link a:hover {
+    color: lightgray;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    background-image: url('Titanclass.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero strong {
+    font-weight: bold;
+  }
+  
+  .hero span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+    }
+    
+    .nav-link {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+  
