@@ -1,80 +1,123 @@
+/* CSS Variables for easier color scheme management */
+:root {
+  --background-color: #181818;
+  --text-color: #ffffff;
+  --accent-color: #1DB954;
+  --hover-color: #1ED760;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Header styles */
+.main-header {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.logo a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo a:hover {
+  color: var(--hover-color);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+.nav-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link a:hover {
+  color: var(--hover-color);
+}
+
+/* Hero section styles */
+.hero {
+  background-image: url('titanclass1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.hero strong {
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .main-header,
+  main {
+    width: 80%;
   }
-  
-  /* Header styles */
-  .main-header {
-    background-color: #333;
-    color: white;
+
+  .nav-links {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-header,
+  main {
+    width: 60%;
+  }
+}
+
+/* CSS for Hover and Active Pseudo-classes */
+a:hover,
+a:active {
+  color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+/* Media Queries for additional responsive design */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
     padding: 10px;
   }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  .nav-link {
-    margin-right: 10px;
-  }
-  
-  .nav-link a {
-    color: white;
-    text-decoration: none;
-    padding: 5px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link a:hover {
-    color: lightgray;
-  }
-  
-  /* Hero section styles */
-  .hero {
-    background-image: url('Titanclass.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 48px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero strong {
-    font-weight: bold;
-  }
-  
-  .hero span {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .nav-links {
-      flex-direction: column;
-    }
-    
-    .nav-link {
-      margin-right: 0;
-      margin-bottom: 5px;
-    }
-  }
+}
+
   

@@ -154,90 +154,90 @@ a:hover, a:active {
 to lists */
 
 section ul li:nth-child(even), section ol li:nth-child(even) {
-background: #333;
-padding: 10px;
-border-radius: 5px;
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 section ul li:nth-child(odd), section ol li:nth-child(odd) {
-background: #333;
-padding: 10px;
-border-radius: 5px;
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Advanced CSS Grid for larger screens */
 
 @media (min-width: 1200px) {
-main {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 20px;
-}
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
-main section {
-grid-column: span 2;
-}
+  main section {
+    grid-column: span 2;
+  }
 
-#biography,
-#career-goals {
-grid-column: span 1;
-}
+  #biography,
+  #career-goals {
+    grid-column: span 1;
+  }
 }
 
 /* CSS for transitions */
 
 a {
-transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 /* CSS for animations */
 
 @keyframes color-change {
-0% { color: var(--text-color); }
-25% { color: var(--accent-color); }
-50% { color: var(--hover-color); }
-75% { color: var(--accent-color); }
-100% { color: var(--text-color); }
+  0% { color: var(--text-color); }
+  25% { color: var(--accent-color); }
+  50% { color: var(--hover-color); }
+  75% { color: var(--accent-color); }
+  100% { color: var(--text-color); }
 }
 
 /* CSS Transform and Transitions for Image */
 
 figure img {
-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 figure img:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Smooth scrolling */
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Styling figcaption */
 
 figcaption {
-text-align: center;
-font-style: italic;
-margin-top: 10px;
-color: var(--hover-color);
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  color: var(--hover-color);
 }
 
 /* Add more responsive design */
 
 @media (max-width: 600px) {
-body {
-font-size: 0.8em;
-}
+  body {
+    font-size: 0.8em;
+  }
 
-header nav ul {
-flex-direction: column;
-align-items: center;
-}
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-main {
-padding: 10px;
-}
+  main {
+    padding: 10px;
+  }
 }
