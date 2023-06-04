@@ -15,18 +15,17 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   transition: all 0.3s ease;
 }
 
 /* Header styles */
 .main-header {
-  text-align: center;
-  margin: 50px 0 20px 0;
-  padding: 20px;
-  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  z-index: 100;
 }
 
 .logo a {
@@ -41,9 +40,10 @@ body {
 
 .nav-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style-type: none;
   padding: 20px 0;
+  margin: 0;
 }
 
 .nav-link a {
@@ -80,20 +80,24 @@ body {
 
 /* Responsive styles */
 @media (min-width: 768px) {
-  .main-header,
-  main {
-    width: 80%;
+  .main-header {
+    padding: 20px 0;
   }
 
   .nav-links {
-    justify-content: space-around;
+    justify-content: flex-end;
+    width: 50%;
   }
 }
 
 @media (min-width: 1024px) {
-  .main-header,
-  main {
-    width: 60%;
+  .main-header {
+    padding: 20px 0;
+  }
+
+  .nav-links {
+    justify-content: flex-end;
+    width: 30%;
   }
 }
 
@@ -113,11 +117,10 @@ a:active {
   .nav-links {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   main {
     padding: 10px;
   }
 }
-
-  
