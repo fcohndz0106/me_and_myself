@@ -1,279 +1,178 @@
-/* CSS Variables for easier color scheme management */
 :root {
-    --background-color: #181818;
-    --text-color: #ffffff;
-    --accent-color: #1DB954;
-    --hover-color: #1ED760;
-    --shadow-color: rgba(0,0,0,0.5);
-  }
-  
-  /* Reset browser styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
-  }
-  
+  --background-color: #181818;
+  --text-color: #ffffff;
+  --accent-color: #1DB954; /* Green color */
+  --hover-color: #1ED760;
+  --shadow-color: rgba(0,0,0,0.5);
+  --input-bg-color: #ffffff; /* White background for inputs */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+header, main {
+  width: 90%;
+  max-width: 1200px;
+  transition: all 0.3s ease;
+}
+
+h1, h2 {
+  color: var(--text-color);
+  margin: 20px 0;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 20px 0;
+}
+
+header {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+header h1 {
+  animation: color-change 5s infinite;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+main {
+  background: #282828;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px var(--shadow-color);
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--accent-color); /* Green border */
+  background-color: var(--input-bg-color); /* White background */
+  color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-color); /* Green border when in focus */
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--hover-color);
+}
+
+@media (min-width: 768px) {
   header, main {
-    width: 90%;
-    max-width: 1200px;
-    transition: all 0.3s ease;
-  }
-  
-  h1, h2 {
-    color: var(--text-color);
-    margin: 20px 0;
-  }
-  
-  a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  a:hover {
-    color: var(--hover-color);
-  }
-  
-  img {
-    border-radius: 10px;
-    max-width: 100%;
-  }
-  
-  hr {
-    border: 0;
-    height: 1px;
-    background: #333;
-    margin: 20px 0;
-  }
-  
-  /* Header Styles */
-  
-  header {
-    text-align: center;
-    margin: 50px 0 20px 0;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  header h1 {
-    animation: color-change 5s infinite;
-  }
-  
-  header nav ul {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    padding: 20px 0;
-  }
-  
-  /* Main Section Styles */
-  
-  main {
-    background: #282828;
-    margin-bottom: 50px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px 0px var(--shadow-color);
-    border-radius: 10px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease;
-  }
-  
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  section h2 {
-    margin-bottom: 20px;
-  }
-  
-  section p, section ul, section ol {
-    margin: 20px 0;
-    opacity: 0;
-    animation: textFadeIn 1.5s forwards;
-    animation-delay: 0.5s;
-  }
-  
-  @keyframes textFadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  
-  section ul, section ol {
-    padding-left: 20px;
-  }
-  
-  section ul li, section ol li {
-    margin-bottom: 10px;
-  }
-  
-  /* Media Queries */
-  
-  @media (min-width: 768px) {
-    header, main {
       width: 80%;
-    }
-  
-    header nav ul {
+  }
+
+  header nav ul {
       justify-content: space-around;
-    }
   }
-  
-  @media (min-width: 1024px) {
-    header, main {
+}
+
+@media (min-width: 1024px) {
+  header, main {
       width: 60%;
-    }
   }
-  
-  /* CSS for Hover and Active Pseudo-classes */
-  
-  a:hover, a:active {
-    color: var(--hover-color);
-    transform: scale(1.05);
-  }
-  
-  /* CSS for nth-child Pseudo-classes to add some variety
-  to lists */
-  
-  section ul li:nth-child(even), section ol li:nth-child(even) {
-    background: #333;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  section ul li:nth-child(odd), section ol li:nth-child(odd) {
-    background: #333;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  /* Advanced CSS Grid for larger screens */
-  
-  @media (min-width: 1200px) {
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-  
-    main section {
-      grid-column: span 2;
-    }
-  
-    #biography,
-    #career-goals {
-      grid-column: span 1;
-    }
-  }
-  
-  /* CSS for transitions */
-  
-  a {
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-  
-  /* CSS for animations */
-  
-  @keyframes color-change {
-    0% { color: var(--text-color); }
-    25% { color: var(--accent-color); }
-    50% { color: var(--hover-color); }
-    75% { color: var(--accent-color); }
-    100% { color: var(--text-color); }
-  }
-  
-  /* CSS Transform and Transitions for Image */
-  
-  figure img {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  figure img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Smooth scrolling */
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Styling figcaption */
-  
-  figcaption {
-    text-align: center;
-    font-style: italic;
-    margin-top: 10px;
-    color: var(--hover-color);
-  }
-  
-  /* Add more responsive design */
-  
-  @media (max-width: 600px) {
-    body {
+}
+
+a:hover, a:active {
+  color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  body {
       font-size: 0.8em;
-    }
-  
-    header nav ul {
+  }
+
+  header nav ul {
       flex-direction: column;
       align-items: center;
-    }
-  
-    main {
+  }
+
+  main {
       padding: 10px;
-    }
   }
-  
-  /* Updated color scheme */
-  
-  .container {
-    background-color: var(--background-color);
-  }
-  
-  h1 {
-    color: var(--text-color);
-  }
-  
-  label {
-    color: var(--text-color);
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-  }
-  
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  textarea:focus {
-    border-color: var(--accent-color);
-  }
-  
-  .btn-submit {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-  }
-  
-  .btn-submit:hover {
-    background-color: var(--hover-color);
-  }
+}
+
+.container {
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.container h1 {
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
   
