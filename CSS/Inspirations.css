@@ -1,132 +1,74 @@
-/* Reset default styles */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  line-height: 1.6;
 }
 
-/* Header styles */
-.header {
-  background-color: #333;
-  padding: 40px;
-  text-align: center;
-  color: #fff;
-}
-
-.header h1 {
-  font-size: 36px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Container styles */
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
 
-/* Game/Movie card styles */
 .game-movie-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.game-movie-card:hover {
-  transform: translateY(-5px);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .game-movie-card img {
-  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 8px 8px 0 0;
+  object-fit: cover;
 }
 
 .game-movie-card-content {
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.game-movie-card h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.game-movie-card p {
-  margin-bottom: 15px;
-  color: #777;
-}
-
-.game-movie-card button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.game-movie-card button:hover {
-  background-color: #555;
-}
-
-.game-movie-card .trailer-container {
-  position: relative;
+.trailer-container {
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
+  position: relative;
 }
 
-.game-movie-card .trailer-container iframe {
+.trailer-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 }
 
-/* Expandable content styles */
 .expand {
   display: none;
-  font-size: 16px;
-  color: #555;
-  line-height: 1.4;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease;
 }
 
-.expand.show {
-  display: block;
-  max-height: 500px;
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .container {
-      grid-template-columns: 1fr;
-  }
-
-  .header h1 {
-      font-size: 28px;
-  }
-
-  .game-movie-card {
-      margin-bottom: 30px;
-  }
+nav ul li {
+  display: inline;
+  margin-right: 10px;
 }
+
+nav ul li a {
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
 
 
