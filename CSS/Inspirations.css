@@ -4,20 +4,28 @@
   --accent-color: #1DB954; /* Green color */
   --hover-color: #1ED760;
   --shadow-color: rgba(0,0,0,0.5);
+  --transition-time: 0.3s;
 }
 
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 1rem;
-  background-color: var(--background-color);
+  overflow-y: auto;
+  height: calc(100vh - 100px); /* Subtracting header and footer height */
 }
 
 .game-movie-card {
@@ -29,6 +37,15 @@ body {
   box-shadow: 0 4px 6px 0 var(--shadow-color);
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: transform var(--transition-time);
+  cursor: pointer;
+  flex: 1 0 30%;  /* Basis of 30% will allow 3 cards in a row on larger screen (minus the margins). It can shrink and grow as needed */
+  margin: 1%;
+}
+
+.game-movie-card:hover {
+  transform: scale(1.05);
+  z-index: 1;  /* On hover, bring the card on top of others */
 }
 
 .game-movie-card img {
@@ -42,6 +59,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .trailer-container {
@@ -59,8 +77,10 @@ body {
   left: 0;
 }
 
-.expand {
-  display: none;
+nav {
+  background-color: var(--background-color);
+  padding: 20px;
+  box-shadow: 0 2px 6px 0 var(--shadow-color);
 }
 
 nav ul {
@@ -78,7 +98,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: var(--accent-color);
-  transition: color 0.2s ease;
+  transition: color var(--transition-time) ease;
 }
 
 nav ul li a:hover {
@@ -87,8 +107,21 @@ nav ul li a:hover {
 
 .footer {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background-color: var(--background-color);
   color: var(--text-color);
+  box-shadow: 0 -2px 6px 0 var(--shadow-color);
 }
 
+/* Responsive design for smaller screens */
+@media screen and (max-width: 900px) {
+  .game-movie-card {
+    flex: 1 0 46%;  /* On smaller screens, reduce the basis to allow only 2 cards in a row */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .game-movie-card {
+    flex: 1 0 100%;  /* On very small screens, cards take up full width */
+  }
+}
