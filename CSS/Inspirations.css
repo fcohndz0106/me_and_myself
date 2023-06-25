@@ -1,5 +1,15 @@
+:root {
+  --background-color: #181818;
+  --text-color: #ffffff;
+  --accent-color: #1DB954; /* Green color */
+  --hover-color: #1ED760;
+  --shadow-color: rgba(0,0,0,0.5);
+}
+
 body {
   font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .container {
@@ -7,6 +17,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1rem;
   padding: 1rem;
+  background-color: var(--background-color);
 }
 
 .game-movie-card {
@@ -15,12 +26,15 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 1rem;
-  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0 4px 6px 0 var(--shadow-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .game-movie-card img {
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .game-movie-card-content {
@@ -52,6 +66,8 @@ body {
 nav ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul li {
@@ -61,14 +77,18 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: var(--hover-color);
 }
 
 .footer {
   text-align: center;
   padding: 10px;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-
-
 
